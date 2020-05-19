@@ -52,7 +52,7 @@ main:
     throw("pair not found exception")
 ```
 
-3. Alternatively, we can use Hashmap to keep a track of already visited element
+3. Alternatively, we can use Hashmap to keep a track of already visited element and its index
 
  we keep on adding the elements till we receive an element whose sum equals to target
 
