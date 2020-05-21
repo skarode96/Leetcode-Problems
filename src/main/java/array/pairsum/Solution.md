@@ -47,8 +47,10 @@ main:
     while (start_index < last_index) : 
 	if( arr[start_index] + arr[last_index] == target):
 		return pair of int
-	start_index++;
-	last_index++;
+    eif arr[start_index] + arr[last_index] > target:
+    	last_index--
+    else
+        start_index++
     throw("pair not found exception")
 ```
 
