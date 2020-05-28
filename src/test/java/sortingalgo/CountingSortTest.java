@@ -26,7 +26,7 @@ public class CountingSortTest {
     @Test public void shouldSortArrayWithNegativeNumbers() {
         int[] arr = {5,8,1,3,6,9,1,-10};
         int[] sortedArray = CountingSort.sort(arr);
-        Assert.assertEquals(sortedArray[0], -10);
+        Assert.assertEquals(sortedArray[0], -10 );
         Assert.assertEquals(sortedArray[1], 1);
         Assert.assertEquals(sortedArray[2], 1);
         Assert.assertEquals(sortedArray[3], 3);
