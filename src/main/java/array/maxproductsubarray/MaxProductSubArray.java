@@ -13,6 +13,7 @@ public class MaxProductSubArray {
                 currentProduct = currentProduct*nums[j];
                 maxProduct = Integer.max(currentProduct, maxProduct);
             }
+
         }
         return maxProduct;
     }
