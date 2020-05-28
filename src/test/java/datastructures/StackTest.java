@@ -3,6 +3,8 @@ package datastructures;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.EmptyStackException;
+
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StackTest {
@@ -63,11 +65,7 @@ public class StackTest {
         Stack<String> stack = new Stack<>();
         stack.push("Test1");
         stack.pop();
-        Exception exception = assertThrows(IllegalStateException.class, stack::pop);
-
-        String expectedMessage = "Cannot perform pop";
-        String actualMessage = exception.getMessage();
-        Assert.assertEquals(expectedMessage, actualMessage);
+        assertThrows(EmptyStackException.class, stack::pop);
 
     }
 

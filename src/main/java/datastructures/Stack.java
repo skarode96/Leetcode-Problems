@@ -1,6 +1,7 @@
 package datastructures;
 
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 
 public class Stack<T> {
 
@@ -22,7 +23,7 @@ public class Stack<T> {
 
     public T pop() throws IllegalStateException {
         if(stackPointer <= 0)
-            throw new IllegalStateException("Cannot perform pop");
+            throw new EmptyStackException();
         return this.content.remove(--stackPointer);
     }
 
