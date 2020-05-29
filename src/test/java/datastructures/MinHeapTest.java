@@ -8,7 +8,7 @@ public class MinHeapTest {
     @Test
     public void shouldCreateHeapOfGivenSize() {
         MinHeap minHeap = new MinHeap(8);
-        Assert.assertEquals(8, minHeap.size());
+        Assert.assertEquals(8, minHeap.getMaxSize());
     }
 
     @Test

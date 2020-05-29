@@ -17,6 +17,10 @@ public class MinHeap {
         return this.size;
     }
 
+    public int getMaxSize() {
+        return this.maxSize;
+    }
+
     public void insert(int element) throws Exception {
         if (this.size >= maxSize)
             throw new Exception("Heap Full");
