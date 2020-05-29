@@ -3,16 +3,20 @@ package array.rotatematrix;
 public class RotateMatrix {
 
     public static void rotate(int[][] matrix) {
-        if (matrix.length == 0)
+        if (isEmpty(matrix))
             return;
         mirrorRows(matrix);
         swapLowerTriangular(matrix);
     }
 
+    private static boolean isEmpty(int[][] matrix) {
+        return matrix.length == 0;
+    }
+
     public static void swapLowerTriangular(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < i; j++) {
-                    swap(matrix, i, j);
+                swap(matrix, i, j);
             }
         }
     }
@@ -24,7 +28,7 @@ public class RotateMatrix {
     }
 
     public static void mirrorRows(int[][] matrix) {
-        for (int i = 0; i < matrix.length/2 ; i++) {
+        for (int i = 0; i < matrix.length / 2; i++) {
             int[] temp = matrix[i];
             matrix[i] = matrix[matrix.length - 1 - i];
             matrix[matrix.length - 1 - i] = temp;
