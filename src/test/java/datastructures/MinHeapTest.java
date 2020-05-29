@@ -80,4 +80,34 @@ public class MinHeapTest {
         minHeap.print();
     }
 
+    @Test
+    public void shouldRemoveWithGivenIndex() throws Exception {
+        MinHeap minHeap = new MinHeap(8);
+        minHeap.insert(5);
+        minHeap.insert(11);
+        minHeap.insert(10);
+        minHeap.insert(8);
+        minHeap.insert(2);
+        minHeap.insert(1);
+        minHeap.insert(19);
+        minHeap.print();
+        minHeap.remove(4);
+        minHeap.print();
+    }
+
+    @Test
+    public void shouldDeleteWithGivenElement() throws Exception {
+        MinHeap minHeap = new MinHeap(8);
+        minHeap.insert(5);
+        minHeap.insert(11);
+        minHeap.insert(10);
+        minHeap.insert(8);
+        minHeap.insert(2);
+        minHeap.insert(1);
+        minHeap.insert(19);
+        minHeap.print();
+        minHeap.delete(5);
+        minHeap.print();
+    }
+
 }

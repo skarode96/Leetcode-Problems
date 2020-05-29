@@ -9,7 +9,7 @@ public class MinHeap {
 
     public MinHeap(int size) {
         this.maxSize = size;
-        this.heap = new int[this.maxSize+1];
+        this.heap = new int[this.maxSize + 1];
         this.heap[0] = Integer.MIN_VALUE;
     }
 
@@ -18,7 +18,7 @@ public class MinHeap {
     }
 
     public void insert(int element) throws Exception {
-        if(this.size >= maxSize)
+        if (this.size >= maxSize)
             throw new Exception("Heap Full");
         this.size++;
         this.heap[size] = element;
@@ -38,19 +38,19 @@ public class MinHeap {
     }
 
     private int parent(int position) {
-        return position/2;
+        return position / 2;
     }
-    
+
     public void print() {
         StringBuilder sb = new StringBuilder();
-        for (int i = 1; i <= this.size/2; i++) {
+        for (int i = 1; i <= this.size / 2; i++) {
             sb.append("Parent : ");
             sb.append(this.heap[i]);
-            if((2*i) <= size) {
+            if ((2 * i) <= size) {
                 sb.append(" Left Child : ");
-                sb.append(this.heap[2*i]);
+                sb.append(this.heap[2 * i]);
             }
-            if((2*i + 1) <= size) {
+            if ((2 * i + 1) <= size) {
                 sb.append(" Right Child : ");
                 sb.append(this.heap[2 * i + 1]);
             }
@@ -60,17 +60,39 @@ public class MinHeap {
     }
 
     public int remove() {
-        int poppedElement = this.heap[FRONT_INDEX];
-        this.heap[FRONT_INDEX] = this.heap[this.size--];
-        minHeapify(FRONT_INDEX);
+        return popElement(FRONT_INDEX);
+    }
+
+    public int remove(int index) {
+        return popElement(index);
+    }
+
+    public int delete(int element) throws Exception {
+        int index = search(element);
+        return remove(index);
+    }
+
+    private int search(int element) throws Exception {
+        int index = 1;
+        while (index <= size) {
+            if(this.heap[index] == element)
+                return index;
+            index++;
+        }
+        throw new Exception("Element not found");
+    }
+
+    private int popElement(int index) {
+        int poppedElement = this.heap[index];
+        this.heap[index] = this.heap[this.size--];
+        minHeapify(index);
         return poppedElement;
     }
 
     private void minHeapify(int index) {
-        if(!isLeaf(index)) {
-            if(isCurrentGreaterThan(leftChild(index), index) || isCurrentGreaterThan(rightChild(index), index)) {
-                if(this.heap[leftChild(index)] < this.heap[rightChild(index)])
-                {
+        if (!isLeaf(index)) {
+            if (isCurrentGreaterThan(leftChild(index), index) || isCurrentGreaterThan(rightChild(index), index)) {
+                if (this.heap[leftChild(index)] < this.heap[rightChild(index)]) {
                     swap(leftChild(index), index);
                     minHeapify(leftChild(index));
 
@@ -88,14 +110,15 @@ public class MinHeap {
     }
 
     private int rightChild(int index) {
-        return 2*index + 1;
+        return 2 * index + 1;
     }
 
     private int leftChild(int index) {
-        return 2*index;
+        return 2 * index;
     }
 
     private boolean isLeaf(int index) {
         return index > (this.size / 2) && index <= this.maxSize;
     }
+
 }
