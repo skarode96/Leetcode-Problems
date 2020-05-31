@@ -31,23 +31,28 @@ public class TreeTest {
         Assert.assertEquals(6, tree.root.right.right.value);
     }
 
-    @Test public void shouldTraverseInorder() {
+    @Test
+    public void shouldTraverseInorder() {
         tree.inOrderTraversal(tree.root);
     }
 
-    @Test public void shouldTraversePreOrder() {
+    @Test
+    public void shouldTraversePreOrder() {
         tree.preOrderTraversal(tree.root);
     }
 
-    @Test public void shouldTraversePostOrder() {
+    @Test
+    public void shouldTraversePostOrder() {
         tree.postOrderTraversal(tree.root);
     }
 
-    @Test public void shouldTraverseInorderWithoutRecursion() {
+    @Test
+    public void shouldTraverseInorderWithoutRecursion() {
         tree.inOrderTraversalWithoutRecursion(tree.root);
     }
 
-    @Test public void shouldFindHeightWithRecursion() {
+    @Test
+    public void shouldFindHeightWithRecursion() {
         tree = new Tree(0);
         tree.root.left = new Node(2);
         tree.root.right = new Node(3);
@@ -57,8 +62,14 @@ public class TreeTest {
         Assert.assertEquals(3, actualHeight);
     }
 
-    @Test public void shouldFindNumberOfNodesInTree() {
+    @Test
+    public void shouldFindNumberOfNodesInTree() {
         int n = tree.findNumberOfNodes(tree.root);
         Assert.assertEquals(7, n);
+    }
+
+    @Test
+    public void shouldPrintLevelOrderTree() {
+        tree.levelOrderTraversal();
     }
 }

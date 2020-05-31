@@ -1,5 +1,7 @@
 package datastructures;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Tree {
@@ -70,5 +72,26 @@ public class Tree {
         }
         return 0;
     }
+
+    public void levelOrderTraversal() {
+        Queue<Node> nodeQueue = new LinkedList<>();
+
+        nodeQueue.add(root);
+
+        while (!nodeQueue.isEmpty()){
+
+            Node topNode = nodeQueue.poll();
+            System.out.println(topNode.value);
+
+            if(topNode.left!= null){
+                nodeQueue.add(topNode.left);
+            }
+            if (topNode.right!=null){
+                nodeQueue.add(topNode.right);
+            }
+        }
+
+    }
+
 }
 
