@@ -1,4 +1,4 @@
-package effectivejava.staticfactoryoverconstructor;
+package effectivejava.creatingdestroyingobjects.staticfactoryoverconstructor;
 
 import java.util.HashMap;
 
