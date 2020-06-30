@@ -1,4 +1,4 @@
-package amazon;
+package amazon.reservationsystem;
 
 import java.util.*;
 

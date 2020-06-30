@@ -3,8 +3,7 @@ package array.pairsum;
 import java.util.HashMap;
 
 public class TwoPairSum {
-    public static int[] twoSum(int[]
-                                       nums, int target) {
+    public static int[] twoSum(int[] nums, int target) {
         //map of number and index
         HashMap<Integer, Integer> map = new HashMap<>();
 

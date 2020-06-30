@@ -1,9 +1,9 @@
-package amazon;
+package amazon.reservationsystem;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-public class SolutionTest {
+public class ReservationSolutionTest {
 
     @Test
     public void testSolution1() {

@@ -34,6 +34,7 @@ public class MaxProductSubArray {
             }
         }
 
+
         currentProduct = 1;
         for (int i = nums.length-1; i >= 0; i--) {
             currentProduct = currentProduct* nums[i];
